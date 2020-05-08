@@ -64,10 +64,12 @@ const Post = ({ data, pageContext }) => {
   // itemQuantity = itemSkuArray.quantity;
   // itemImage = itemSkuArray.image;
 
-  // const inStock;
-  // if (itemQuantity > 0) {
-  //   inStock = "http://schema.org/InStock";
+  const inStock = "http://schema.org/InStock";
+  // if (skuObj.quantity == 0) {
+  //   inStock = "http://schema.org/OutOfStock";
   // }
+  console.log('skuObj.quantity', skuObj)
+  console.log('inStock', inStock);
   return (
     <Layout>
      
@@ -79,7 +81,7 @@ const Post = ({ data, pageContext }) => {
         pathname={post.frontmatter.path}
         price = {post.frontmatter.price}
         sku = {sku}
-        //availability = {inStock}
+        availability = {inStock}
         article
       />
       <Header title={title} cover={image} />
